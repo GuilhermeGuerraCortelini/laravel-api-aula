@@ -1,12 +1,16 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return response()->json([
+        'message' => 'OK'
+    ]);
 });
 
 Route::get('/somar', function(Request $request) {
+<<<<<<< Updated upstream
     // Não está chegando nada pela request
     if(count($request->all()) < 1){
         return response ()->json([
@@ -14,6 +18,8 @@ Route::get('/somar', function(Request $request) {
         ], 406);
     }
     
+=======
+>>>>>>> Stashed changes
     $soma = array_sum($request->all());
     return response()->json([
         'message' => 'Somado com sucesso', // Opcional
