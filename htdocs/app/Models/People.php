@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class People extends Model
 {
     use HasFactory;
+
+    protected $fillable = [ // atribuir em massa
+        'id',
+        'name',
+        'email',
+        'address',
+        'state',
+        'country',
+        'phone',
+        'birthDate',
+    ];
+
 }
