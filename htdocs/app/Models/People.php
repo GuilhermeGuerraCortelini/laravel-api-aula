@@ -9,7 +9,7 @@ class People extends Model
 {
     use HasFactory;
 
-    protected $fillable = [ // atribuir em massa
+    protected $fillable = [ // campos que estão no banco, descara outros valores
         'id',
         'name',
         'email',
@@ -20,4 +20,7 @@ class People extends Model
         'birthDate',
     ];
 
+    public function interests(){
+        return $this->hasMany(Interest::class);
+    }
 }
